@@ -1,0 +1,9 @@
+.player-dashboard {
+  @include to(3) {
+    grid-row: 1 / span 1;
+    min-height: auto;
+  }
+  background-color: $grey-800;
+  min-height: calc(100vh - 48px); //48 -> header
+  position: relative;
+}

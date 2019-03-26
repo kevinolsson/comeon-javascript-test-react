@@ -1,0 +1,7 @@
+.casino-dashboard {
+  @include from(4) {
+    grid-template-columns: 1fr 320px;
+  }
+  display: grid;
+  grid-template-columns: 1fr;
+}

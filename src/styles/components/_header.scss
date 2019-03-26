@@ -1,10 +1,10 @@
 .header {
-  @extend %wrapper;
+  // @extend %wrapper;
   height: 48px;
   text-align: center;
 
   &__wrapper {
-    background-color: $grey-800;
+    background-color: $grey-900;
   }
 
   img {
