@@ -1,0 +1,7 @@
+%wrapper {
+  @include from(4) {
+    margin: 0 auto;
+    max-width: 1256px; // 1280 - 24
+    padding: 0 12px;
+  }
+}

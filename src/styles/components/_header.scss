@@ -1,0 +1,14 @@
+.header {
+  @extend %wrapper;
+  height: 48px;
+  text-align: center;
+
+  &__wrapper {
+    background-color: $grey-800;
+  }
+
+  img {
+    height: 48px;
+    width: auto;
+  }
+}
