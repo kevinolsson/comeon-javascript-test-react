@@ -6,6 +6,13 @@ import Casino from './Casino';
 import NotFound from './NotFound';
 
 class App extends React.Component {
+  state = {
+    player: {
+      username: null,
+      loggedIn: false,
+    },
+  };
+
   render() {
     return (
       <React.Fragment>
