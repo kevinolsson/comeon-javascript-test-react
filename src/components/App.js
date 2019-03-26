@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter, Route, Switch, Redirect,
+} from 'react-router-dom';
 import Header from './Header';
 import Login from './Login';
 import Casino from './Casino';
@@ -13,14 +15,30 @@ class App extends React.Component {
     },
   };
 
+  loginPlayer = (value) => {
+    const { player } = { ...this.state };
+    player.loggedIn = (value === 'success') ? true : false;
+    this.setState(
+      prevState => ({ player }),
+    );
+  }
+
   render() {
+    const { player } = { ...this.state };
     return (
       <React.Fragment>
         <Header />
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Login} />
-            <Route path="/casino" component={Casino} />
+            <Route
+              exact
+              path="/"
+              render={props => <Login {...props} loginPlayer={this.loginPlayer} loggedIn={player.loggedIn} />}
+            />
+            <Route
+              path="/casino"
+              render={props => <Casino {...props} player={player} />}
+            />
             <Route component={NotFound} />
           </Switch>
         </BrowserRouter>
