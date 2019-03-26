@@ -8,20 +8,24 @@ import Unauthorized from './Unauthorized';
 class Casino extends React.Component {
   render() {
     const { match, player } = this.props;
-    console.log(player);
     return (
       <React.Fragment>
-        <Switch>
-          { !player.loggedIn
-            ? <Route component={Unauthorized} />
-            : (
-              <React.Fragment>
-                <Route exact path={`${match.url}/game/:id`} component={Game} />
-                <Route path={match.url} component={CasinoDashboard} />
-              </React.Fragment>
-            )
-          }
-        </Switch>
+        { !player.loggedIn
+          ? <Route component={Unauthorized} />
+          : (
+            <Switch>
+              <Route
+                exact
+                path={`${match.url}/game/:id`}
+                render={props => <Game {...props} player={player} />}
+              />
+              <Route
+                path={match.url}
+                render={props => <CasinoDashboard {...props} player={player} />}
+              />
+            </Switch>
+          )
+        }
       </React.Fragment>
     );
   }

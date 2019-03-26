@@ -1,9 +1,17 @@
 import React from 'react';
+import CasinoGames from './CasinoGames';
+import PlayerDashboard from './PlayerDashboard';
 
-const CasinoDashboard = () => (
-  <div>
-    <h1>Casino</h1>
-  </div>
-);
+class CasinoDashboard extends React.Component {
+  render() {
+    const { player } = this.props;
+    return (
+      <div className="casino-dashboard">
+        <CasinoGames />
+        <PlayerDashboard player={player} />
+      </div>
+    );
+  }
+}
 
 export default CasinoDashboard;

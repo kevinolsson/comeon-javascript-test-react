@@ -31,7 +31,7 @@ class Login extends React.Component {
     })
       .then(response => response.json())
       .then((json) => {
-        loginPlayer(json.status);
+        loginPlayer(json.status, json.player);
       });
   };
 

@@ -5,7 +5,7 @@ class Game extends React.Component {
     const { match } = this.props;
     return (
       <div>
-        {match.params.id}
+        <h1>{match.params.id}</h1>
       </div>
     );
   }

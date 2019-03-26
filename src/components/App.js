@@ -10,14 +10,15 @@ import NotFound from './NotFound';
 class App extends React.Component {
   state = {
     player: {
-      username: null,
       loggedIn: false,
+      details: {},
     },
   };
 
-  loginPlayer = (value) => {
+  loginPlayer = (status, details) => {
     const { player } = { ...this.state };
-    player.loggedIn = (value === 'success') ? true : false;
+    player.loggedIn = (status === 'success') ? true : false;
+    player.details = details;
     this.setState(
       prevState => ({ player }),
     );
