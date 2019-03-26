@@ -7,7 +7,7 @@ import Unauthorized from './Unauthorized';
 
 class Casino extends React.Component {
   render() {
-    const { match, player } = this.props;
+    const { match, player, logoutPlayer } = this.props;
     return (
       <React.Fragment>
         { !player.loggedIn
@@ -21,7 +21,7 @@ class Casino extends React.Component {
               />
               <Route
                 path={match.url}
-                render={props => <CasinoDashboard {...props} player={player} />}
+                render={props => <CasinoDashboard {...props} player={player} logoutPlayer={logoutPlayer} />}
               />
             </Switch>
           )

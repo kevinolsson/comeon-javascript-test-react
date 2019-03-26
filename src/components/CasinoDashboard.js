@@ -9,12 +9,12 @@ class CasinoDashboard extends React.Component {
   }
 
   render() {
-    const { player } = this.props;
+    const { player, logoutPlayer } = this.props;
     const { filter, games } = this.state;
     return (
       <div className="casino-dashboard">
         <CasinoGames games={games} />
-        <PlayerDashboard player={player} filter={filter} />
+        <PlayerDashboard player={player} logoutPlayer={logoutPlayer} filter={filter} />
       </div>
     );
   }

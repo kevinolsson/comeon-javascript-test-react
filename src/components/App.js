@@ -11,14 +11,26 @@ class App extends React.Component {
   state = {
     player: {
       loggedIn: false,
+      username: '',
       details: {},
     },
   };
 
-  loginPlayer = (status, details) => {
+  loginPlayer = (status, username, details) => {
     const { player } = { ...this.state };
     player.loggedIn = (status === 'success') ? true : false;
+    player.username = username;
     player.details = details;
+    this.setState(
+      prevState => ({ player }),
+    );
+  };
+
+  logoutPlayer = () => {
+    const { player } = { ...this.state };
+    player.loggedIn = false;
+    player.username = '';
+    player.details = {};
     this.setState(
       prevState => ({ player }),
     );
@@ -34,11 +46,25 @@ class App extends React.Component {
             <Route
               exact
               path="/"
-              render={props => <Login {...props} loginPlayer={this.loginPlayer} loggedIn={player.loggedIn} />}
+              render={
+                props => (
+                  <Login
+                    {...props}
+                    loginPlayer={this.loginPlayer}
+                    loggedIn={player.loggedIn}
+                  />
+                )}
             />
             <Route
               path="/casino"
-              render={props => <Casino {...props} player={player} />}
+              render={
+                props => (
+                  <Casino
+                    {...props}
+                    player={player}
+                    logoutPlayer={this.logoutPlayer}
+                  />
+                )}
             />
             <Route component={NotFound} />
           </Switch>

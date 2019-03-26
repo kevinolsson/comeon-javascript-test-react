@@ -3,10 +3,10 @@ import Player from './Player';
 
 class PlayerDashboard extends React.Component {
   render() {
-    const { player } = this.props;
+    const { player, logoutPlayer } = this.props;
     return (
       <div className="player-dashboard">
-        <Player player={player} />
+        <Player player={player} logoutPlayer={logoutPlayer} />
       </div>
     );
   }
