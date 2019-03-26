@@ -1,14 +1,12 @@
 import React from 'react';
+import Player from './Player';
 
 class PlayerDashboard extends React.Component {
   render() {
     const { player } = this.props;
     return (
       <div className="player-dashboard">
-        <h1>
-          Hello
-          {player.details.name}
-        </h1>
+        <Player player={player} />
       </div>
     );
   }
