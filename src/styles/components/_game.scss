@@ -1,0 +1,28 @@
+.game {
+  background-color: $grey-800;
+  border-radius: 3px;
+  overflow: hidden;
+
+  &__thumbnail {
+    background-position: center;
+    background-size: cover;
+    height: 55%;
+  }
+
+  &__content {
+    height: 45%;
+    margin: 12px;
+
+    span {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    p {
+      line-height: 1.2em;
+      margin: 6px 0;
+      max-height: 3.6em;
+      overflow: hidden;
+    }
+  }
+}

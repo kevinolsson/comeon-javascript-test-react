@@ -1,0 +1,16 @@
+.casino-games {
+  @include from(4) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include from(5) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include from(6) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  display: grid;
+  grid-auto-rows: 360px;
+  grid-gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 12px;
+}

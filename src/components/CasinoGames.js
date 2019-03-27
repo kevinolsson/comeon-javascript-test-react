@@ -1,9 +1,15 @@
 import React from 'react';
+import Game from './Game';
 
-const CasinoGames = () => (
-  <div>
-    <h1>CasinoGames</h1>
-  </div>
-);
+class CasinoGames extends React.Component {
+  render() {
+    const { games } = this.props;
+    return (
+      <div className="casino-games">
+        {Object.keys(games).map(key => <Game key={key} game={games[key]} />)}
+      </div>
+    );
+  }
+}
 
 export default CasinoGames;

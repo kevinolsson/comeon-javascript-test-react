@@ -2,10 +2,14 @@ import React from 'react';
 
 class Game extends React.Component {
   render() {
-    const { match } = this.props;
+    const { game } = this.props;
     return (
-      <div>
-        <h1>{match.params.id}</h1>
+      <div className="game">
+        <div className="game__thumbnail" style={{ backgroundImage: `url(${game.icon})` }} />
+        <div className="game__content">
+          <span>{game.name}</span>
+          <p>{game.description}</p>
+        </div>
       </div>
     );
   }

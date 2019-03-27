@@ -8,6 +8,17 @@ class CasinoDashboard extends React.Component {
     games: {},
   }
 
+  componentDidMount() {
+    const { filter } = this.state;
+    fetch(`http://localhost:3001/games?${filter}`, { method: 'get' })
+      .then(response => response.json())
+      .then((json) => {
+        this.setState(
+          prevState => ({ games: json }),
+        );
+      });
+  }
+
   render() {
     const { player, logoutPlayer } = this.props;
     const { filter, games } = this.state;

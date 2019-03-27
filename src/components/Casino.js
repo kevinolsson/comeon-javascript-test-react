@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Game from './Game';
+import LaunchGame from './LaunchGame';
 import CasinoDashboard from './CasinoDashboard';
 import NotFound from './NotFound';
 import Unauthorized from './Unauthorized';
@@ -17,7 +17,7 @@ class Casino extends React.Component {
               <Route
                 exact
                 path={`${match.url}/game/:id`}
-                render={props => <Game {...props} player={player} />}
+                render={props => <LaunchGame {...props} player={player} />}
               />
               <Route
                 path={match.url}
