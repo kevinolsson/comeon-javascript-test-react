@@ -19,6 +19,10 @@
     }
 
     p {
+      @include to(3) {
+        display: none;
+      }
+      font-size: 14px;
       line-height: 1.2em;
       margin: 6px 0;
       max-height: 3.6em;

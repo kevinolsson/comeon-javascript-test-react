@@ -1,4 +1,5 @@
 import React from 'react';
+import { truncate } from '../helpers';
 
 class Game extends React.Component {
   render() {
@@ -8,8 +9,8 @@ class Game extends React.Component {
         <div className="game__thumbnail" style={{ backgroundImage: `url(${game.icon})` }} />
         <div className="game__content">
           <span>{game.name}</span>
-          <p>{game.description}</p>
-          <button className="button button--card">Play Game</button>
+          <p>{ truncate(game.description) }</p>
+          <button type="button" className="button button--card">Play Game</button>
         </div>
       </div>
     );

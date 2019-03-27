@@ -39,9 +39,9 @@ class App extends React.Component {
   render() {
     const { player } = { ...this.state };
     return (
-      <React.Fragment>
-        <Header />
-        <BrowserRouter>
+      <BrowserRouter>
+        <React.Fragment>
+          <Header />
           <Switch>
             <Route
               exact
@@ -68,8 +68,8 @@ class App extends React.Component {
             />
             <Route component={NotFound} />
           </Switch>
-        </BrowserRouter>
-      </React.Fragment>
+        </React.Fragment>
+      </BrowserRouter>
     );
   }
 }

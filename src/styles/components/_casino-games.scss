@@ -1,7 +1,23 @@
 .casino-games {
+  @include from(2) {
+    grid-auto-rows: 46vw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include from(4) {
+    grid-auto-rows: 36vw;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include from(5) {
+    grid-auto-rows: 30vw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include from(7) {
+    grid-template-columns: repeat(4, 1fr);
+  }
   display: grid;
-  grid-auto-rows: 30vw;
+  grid-auto-rows: 66vw;
   grid-gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
   padding: 12px;
   width: calc(100% - 24px);
 }

@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Unauthorized = () => (
   <div>
-    <h1>You are not allowed to view this page!</h1>
-    <Link to="/">Login page</Link>
+    <Redirect to="/" push />
+    {
+      // I had ambitions of designing an unauthorized page, but a redirect might be better
+      // <h1>You are not allowed to view this page!</h1>
+      // <Link to="/">Login page</Link>
+    }
   </div>
 );
 
