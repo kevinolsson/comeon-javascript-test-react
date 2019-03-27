@@ -9,6 +9,7 @@ class Game extends React.Component {
         <div className="game__content">
           <span>{game.name}</span>
           <p>{game.description}</p>
+          <button className="button button--card">Play Game</button>
         </div>
       </div>
     );
