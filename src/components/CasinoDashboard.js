@@ -19,13 +19,33 @@ class CasinoDashboard extends React.Component {
       });
   }
 
+  updateFilter = (value) => {
+    let { filter } = this.state;
+    filter = value;
+    fetch(`http://localhost:3001/games?${filter}`, { method: 'get' })
+      .then(response => response.json())
+      .then((json) => {
+        this.setState(
+          prevState => ({
+            filter,
+            games: json,
+          }),
+        );
+      });
+  };
+
   render() {
     const { player, logoutPlayer } = this.props;
     const { filter, games } = this.state;
     return (
       <div className="casino-dashboard">
         <CasinoGames games={games} />
-        <PlayerDashboard player={player} logoutPlayer={logoutPlayer} filter={filter} />
+        <PlayerDashboard
+          player={player}
+          logoutPlayer={logoutPlayer}
+          filter={filter}
+          updateFilter={this.updateFilter}
+        />
       </div>
     );
   }

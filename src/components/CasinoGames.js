@@ -6,7 +6,10 @@ class CasinoGames extends React.Component {
     const { games } = this.props;
     return (
       <div className="casino-games">
-        {Object.keys(games).map(key => <Game key={key} game={games[key]} />)}
+        { (games.length > 0)
+          ? Object.keys(games).map(key => <Game key={key} game={games[key]} />)
+          : <h1>Can't find games</h1>
+        }
       </div>
     );
   }
