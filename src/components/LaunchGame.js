@@ -1,12 +1,19 @@
 import React from 'react';
+import '../lib/comeon.game-1.0.min';
 
 class LaunchGame extends React.Component {
-  render() {
+  componentDidMount() {
     const { match } = this.props;
+    comeon.game.launch(`${match.params.id}`); // eslint-disable-line no-undef
+  }
+
+  render() {
     return (
-      <div>
-        <h1>{match.params.id}</h1>
-      </div>
+      <React.Fragment>
+        <div className="launch-game">
+          <div id="game-launch" />
+        </div>
+      </React.Fragment>
     );
   }
 }

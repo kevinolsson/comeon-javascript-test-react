@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { truncate } from '../helpers';
 
 class Game extends React.Component {
@@ -10,7 +11,7 @@ class Game extends React.Component {
         <div className="game__content">
           <span>{game.name}</span>
           <p>{ truncate(game.description) }</p>
-          <button type="button" className="button button--card">Play Game</button>
+          <Link to={`casino/game/${game.code}`} className="button button--card">Play Game</Link>
         </div>
       </div>
     );
