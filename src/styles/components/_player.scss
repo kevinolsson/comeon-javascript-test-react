@@ -1,0 +1,27 @@
+.player {
+  border-bottom: 1px solid $grey-600;
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: 40px [avatar] 1fr [details];
+  padding: 12px;
+
+  &__avatar {
+    border-radius: 100%;
+    width: 100%;
+  }
+
+  &__details {
+    h3 {
+      margin: 0 0 3px;
+    }
+
+    p {
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+
+  &__actions {
+    grid-column: 2 / span 1;
+  }
+}

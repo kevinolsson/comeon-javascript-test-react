@@ -9,10 +9,12 @@ class SearchGame extends React.Component {
 
   render() {
     return (
-      <label htmlFor="search">
-        <span>Search Game</span>
-        <input id="search" type="text" name="search" placeholder="Search Game" onChange={this.handleInput} />
-      </label>
+      <div className="search-game">
+        <label htmlFor="search">
+          <input required id="search" type="text" name="search" onChange={this.handleInput} />
+          <span>Search Game</span>
+        </label>
+      </div>
     );
   }
 }

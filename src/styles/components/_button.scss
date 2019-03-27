@@ -27,7 +27,13 @@
 
   &--primary {
     background-color: $brandprimarysolid-1;
-    box-shadow: 0 1px 0 1px $brandprimarysolid-3;
+    box-shadow: 0 1px 0 1 $brandprimarysolid-3;
+  }
+
+  &--secondary {
+    background-color: $grey-300;
+    box-shadow: 0 1px 0 0 $grey-500;
+    color: $grey-800;
   }
 
   &--big {
@@ -38,6 +44,11 @@
     line-height: 51px;
     margin: 12px;
     width: calc(100% - 24px);
+  }
+
+  &--small {
+    font-size: 12px;
+    font-weight: 500;
   }
 
   &--card {

@@ -1,0 +1,42 @@
+label {
+  display: block;
+  height: 62px;
+  margin: 12px 0;
+
+  span {
+    color: $grey-300;
+    display: block;
+    font-size: 16px;
+    transform: translateY(-36px);
+    transition: transform 0.2s ease-out;
+  }
+
+  input {
+    &:not([type="submit"]) {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid $grey-200;
+      color: $grey-50;
+      display: inline-block;
+      font-size: 18px;
+      height: 52px;
+      outline: 0;
+      width: 100%;
+    }
+  }
+
+  //sass-lint:disable force-pseudo-nesting, force-attribute-nesting, no-qualifying-elements
+  input:focus + span, input:not([type="button"]):valid + span  {
+    font-size: 12px;
+    transform: translateY(-62px);
+  }
+
+  span + input:focus { //sass-lint:disable-line force-pseudo-nesting
+    transform: translateY(2px);
+  }
+
+}
+
+
+
+
