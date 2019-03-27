@@ -53,7 +53,7 @@ class Login extends React.Component {
         {loggedIn
           && <Redirect to="/casino" push />
         }
-        <form onSubmit={this.handleForm}>
+        <form className="login-form" onSubmit={this.handleForm}>
           {fail
             && (
               <div className="error-message">
@@ -62,15 +62,28 @@ class Login extends React.Component {
             )
           }
           <label htmlFor="username">
+            <input
+              required
+              type="text"
+              name="username"
+              id="username"
+              value={username}
+              onChange={this.handleInput}
+            />
             <span>Username</span>
-            <input type="text" name="username" id="username" value={username} onChange={this.handleInput} />
           </label>
           <label htmlFor="password">
-            <span>password</span>
-            <input type="password" name="password" id="password" value={password} onChange={this.handleInput} />
+            <input
+              required
+              type="password"
+              name="password"
+              id="password"
+              onChange={this.handleInput}
+            />
+            <span>Password</span>
           </label>
           <div className="button__wrapper">
-            <input type="submit" className="button button--primary" />
+            <input type="submit" className="button button--primary button--big" />
           </div>
         </form>
       </React.Fragment>

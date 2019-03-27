@@ -6,7 +6,7 @@ class Game extends React.Component {
   render() {
     const { game } = this.props;
     return (
-       <Link to={`casino/game/${game.code}`} className="game">
+      <Link to={`casino/game/${game.code}`} className="game">
         <div className="game__thumbnail" style={{ backgroundImage: `url(${game.icon})` }} />
         <div className="game__content">
           <span>{game.name}</span>
