@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   state = {
+    fail: false,
     username: '',
     password: '',
   };
@@ -31,12 +32,21 @@ class Login extends React.Component {
     })
       .then(response => response.json())
       .then((json) => {
-        loginPlayer(json.status, username, json.player);
+        if (json.status === 'success') {
+          this.setState(
+            prevState => ({ fail: false }),
+          );
+          loginPlayer(json.status, username, json.player);
+        } else {
+          this.setState(
+            prevState => ({ fail: true }),
+          );
+        }
       });
   };
 
   render() {
-    const { username, password } = this.state;
+    const { fail, username, password } = this.state;
     const { loggedIn } = this.props;
     return (
       <React.Fragment>
@@ -44,6 +54,13 @@ class Login extends React.Component {
           && <Redirect to="/casino" push />
         }
         <form onSubmit={this.handleForm}>
+          {fail
+            && (
+              <div className="error-message">
+                <p>Invalid credentials!</p>
+              </div>
+            )
+          }
           <label htmlFor="username">
             <span>Username</span>
             <input type="text" name="username" id="username" value={username} onChange={this.handleInput} />
