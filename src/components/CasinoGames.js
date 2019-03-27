@@ -1,5 +1,6 @@
 import React from 'react';
 import Game from './Game';
+import SearchEmpty from './SearchEmpty';
 
 class CasinoGames extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class CasinoGames extends React.Component {
       <div className="casino-games">
         { (games.length > 0)
           ? Object.keys(games).map(key => <Game key={key} game={games[key]} />)
-          : <h1>Can't find games</h1>
+          : <SearchEmpty />
         }
       </div>
     );
