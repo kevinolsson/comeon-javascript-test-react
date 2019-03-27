@@ -23,7 +23,13 @@ class Logout extends React.Component {
   render() {
     const { player } = this.props;
     return (
-      <button type="button" className="button button--secondary button--small" onClick={this.logoutPlayer}>Logout</button>
+      <button
+        type="button"
+        className="button button--secondary button--small"
+        onClick={this.logoutPlayer}
+      >
+        Logout
+      </button>
     );
   }
 }

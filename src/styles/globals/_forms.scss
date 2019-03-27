@@ -28,7 +28,7 @@ label {
   //sass-lint:disable force-pseudo-nesting, force-attribute-nesting, no-qualifying-elements
   input:focus + span, input:not([type="button"]):valid + span  {
     font-size: 12px;
-    transform: translateY(-62px);
+    transform: translateY(-56px);
   }
 
   span + input:focus { //sass-lint:disable-line force-pseudo-nesting

@@ -1,0 +1,16 @@
+.launch-game {
+  margin: 0 auto;
+  max-width: 640px;
+  padding: 12px;
+  width: calc(100% - 24px);
+
+  &__menu {
+    padding: 12px 0;
+    text-align: center;
+
+    a {
+      color: $grey-50;
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.error-page {
+  margin: 0 auto;
+  max-width: 560px;
+  padding: 12px;
+  text-align: center;
+  width: calc(100% - 24px);
+
+  a {
+    color: $grey-50;
+    font-size: 18px;
+  }
+}

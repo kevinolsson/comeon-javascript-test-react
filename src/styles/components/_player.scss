@@ -1,5 +1,4 @@
 .player {
-  border-bottom: 1px solid $grey-600;
   display: grid;
   grid-gap: 12px;
   grid-template-columns: 40px [avatar] 1fr [details];
