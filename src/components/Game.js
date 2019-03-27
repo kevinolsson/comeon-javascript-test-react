@@ -6,14 +6,14 @@ class Game extends React.Component {
   render() {
     const { game } = this.props;
     return (
-      <div className="game">
+       <Link to={`casino/game/${game.code}`} className="game">
         <div className="game__thumbnail" style={{ backgroundImage: `url(${game.icon})` }} />
         <div className="game__content">
           <span>{game.name}</span>
           <p>{ truncate(game.description) }</p>
-          <Link to={`casino/game/${game.code}`} className="button button--card">Play Game</Link>
+          <button type="button" className="button button--card">Play Game</button>
         </div>
-      </div>
+      </Link>
     );
   }
 }

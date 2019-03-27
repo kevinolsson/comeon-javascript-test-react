@@ -1,0 +1,27 @@
+.button {
+  -webkit-appearance: none; //sass-lint:disable-line no-vendor-prefixes
+  border: 0;
+  color: $grey-50;
+  display: inline-block;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--card {
+    @include to(1) {
+      font-size: 14px;
+    }
+    background-color: $grey-800;
+    border-radius: 100px;
+    bottom: 24px;
+    left: 0;
+    line-height: 32px;
+    position: absolute;
+    width: 100%;
+  }
+}
